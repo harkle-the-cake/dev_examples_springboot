@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
     <meta charset = "ISO-8859-1" />
@@ -6,40 +8,27 @@
     <title>Spring Boot Application</title>
 </head>
 <body>
-<h4>Welcome to Thymeleaf Spring Boot web application</h4>
-<h5>Locations:</h5>
 
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-   $(document).ready(function() {
-      $("button").click(function() {
-         $.ajax({
-            type : "GET",
-            url : "http://localhost:8080/location",
-            headers : {
-               "Content-Type" : "application/json"
-            },
-            success : function(data) {
-               alert(data);
-            },
-            error : function(data) {
-            }
-         });
-      });
-   });
-</script>
+<!-- include the header in the subfolder fragements, there the file header.html, inside the tag site-header
+ -->
+<div th:insert="fragments/header :: site-header"></div>
+
+<h2 th:text="${pageDataDto.title}">page header will be replaced</h2>
+<p th:text="${pageDataDto.description}">description will be replaced</p>
 
 <table>
     <thead>
     <tr>
-        <th th:text="#{msgs.headers.name}">Name</th>
-        <th th:text="#{msgs.headers.price}">Price</th>
+        <th th:text="${tableHeaderDto.col1}">col1</th>
+        <th th:text="${tableHeaderDto.col2}">col2</th>
+        <th th:text="${tableHeaderDto.col3}">col3</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="prod: ${allProducts}">
-        <td th:text="${prod.name}">Oranges</td>
-        <td th:text="${#numbers.formatDecimal(prod.price, 1, 2)}">0.99</td>
+    <tr th:each="location: ${ratingDtoList}">
+        <td th:text="${location.title}">location title</td>
+        <td th:text="${location.rating}">location rating</td>
+        <td th:text="${location.groups}">location groups</td>
     </tr>
     </tbody>
 </table>

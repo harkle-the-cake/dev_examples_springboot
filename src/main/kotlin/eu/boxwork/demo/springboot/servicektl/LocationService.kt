@@ -58,7 +58,7 @@ class LocationService {
         return fileContent
     }
 
-    fun getRatings(): List<RatingDto>? {
+    fun getRatings(): List<RatingDto> {
         // definieren eine leere Liste als Rückgabewert
         val fileContent: MutableList<RatingDto> = ArrayList()
         // lese inhalt als Strings
