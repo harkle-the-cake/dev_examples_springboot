@@ -28,7 +28,7 @@ class LocationService {
         // ... lesen der vorhandenen Dateien...
         val locationFiles = root.list()
 
-        if (locationFiles==null) return fileContent;
+        if (locationFiles==null) return fileContent
 
         // ... wenn nix da ist, geben wir die leere Liste zurück
         // ansonsten, lesen wir in der FOR-Schleife jede Datei ein...

@@ -4,6 +4,11 @@ This repos hold some basic examples for spring boot.
 The server will contain some CRUD (create, read, update, delete) 
 end points that can be used.
 In this case the server will provide some basic functions for maintaining holiday places.
+currently:
+* get locations
+* get specific location
+* get rating
+* view locations in HTML  (using templating and Thymeleaf)
 ## Client
 A client will be able to read those data and/or a subset of data.
-In this case we use the Jersey Client Framework with Jackson.
+In this case we use the Jersey Client Framework with Jackson (objectmapper).

@@ -14,8 +14,6 @@ import java.lang.Exception
 class LocationServiceController(
     @Autowired var service: LocationService,
 ) {
-
-
     @GetMapping("/location")
     fun getLocations() = service.getLocations()
 
@@ -35,8 +33,6 @@ class LocationServiceController(
         }
         throw Exception("Eintrag nicht gefunden.")
     }
-
-
     @ExceptionHandler(Exception::class)
     fun handleException(ex:Exception) = ResponseEntity(ex.message, HttpStatus.BAD_REQUEST)
 }
