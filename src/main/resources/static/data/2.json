@@ -1,0 +1,11 @@
+{
+  "id":2,
+  "title": "Alps - Montafon",
+  "cost":"++",
+  "location": {
+    "zip": 6791,
+    "place": "Österreich"
+  },
+  "rating":"***",
+  "groups":[ "climbing","nature","wellness" ]
+}

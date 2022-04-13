@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "ISO-8859-1" />
+    <link href = "css/styles.css" rel = "stylesheet"/>
+    <title>Spring Boot Application</title>
+</head>
+<body>
+<h4>Welcome to Thymeleaf Spring Boot web application</h4>
+<h5>Locations:</h5>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function() {
+      $("button").click(function() {
+         $.ajax({
+            type : "GET",
+            url : "http://localhost:8080/location",
+            headers : {
+               "Content-Type" : "application/json"
+            },
+            success : function(data) {
+               alert(data);
+            },
+            error : function(data) {
+            }
+         });
+      });
+   });
+</script>
+
+<table>
+    <thead>
+    <tr>
+        <th th:text="#{msgs.headers.name}">Name</th>
+        <th th:text="#{msgs.headers.price}">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="prod: ${allProducts}">
+        <td th:text="${prod.name}">Oranges</td>
+        <td th:text="${#numbers.formatDecimal(prod.price, 1, 2)}">0.99</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

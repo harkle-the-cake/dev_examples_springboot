@@ -1,0 +1,11 @@
+{
+  "id":1,
+  "title": "Holywood Beach",
+  "cost":"++++",
+  "location": {
+    "zip": 33019,
+    "place": "Florida"
+  },
+  "rating":"****",
+  "groups":[ "beach","site-seeing","wellness" ]
+}
